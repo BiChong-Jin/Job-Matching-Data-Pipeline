@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: funnel_daily
+    columns:
+      - name: event_date
+        tests: [not_null]
+
+  - name: ab_metrics_daily
+    columns:
+      - name: event_date
+        tests: [not_null]
+      - name: experiment_id
+        tests: [not_null]
+      - name: variant
+        tests: [not_null]

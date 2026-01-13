@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: event-driven-job-matching
+    schema: job_matching_bronze
+    tables:
+      - name: events_raw

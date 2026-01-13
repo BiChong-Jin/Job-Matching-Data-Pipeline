@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: events
+    description: "Canonical deduplicated job-matching events"
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+          - unique
+      - name: event_name
+        tests:
+          - not_null
+      - name: event_ts
+        tests:
+          - not_null

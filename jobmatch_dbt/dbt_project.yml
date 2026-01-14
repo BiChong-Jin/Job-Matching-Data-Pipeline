@@ -33,8 +33,8 @@ models:
     example:
       +materialized: view
     silver:
-      +schema: job_matching_silver
+      +schema: silver
       +materialized: table
     gold:
-      +schema: job_matching_gold
+      +schema: gold
       +materialized: table

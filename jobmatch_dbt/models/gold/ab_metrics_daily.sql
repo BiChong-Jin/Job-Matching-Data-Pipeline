@@ -33,5 +33,5 @@ SELECT
   ) AS apply_per_click_user_level
 FROM base
 GROUP BY 1, 2, 3
-ORDER BY event_date DESC, experiment_id, variant;
+ORDER BY event_date DESC, experiment_id, variant
 

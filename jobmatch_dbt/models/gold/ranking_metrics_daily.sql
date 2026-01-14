@@ -36,5 +36,5 @@ SELECT
   ) AS apply_per_click_user_level
 FROM k_buckets
 GROUP BY 1, 2
-ORDER BY event_date DESC, k_bucket;
+ORDER BY event_date DESC, k_bucket
 

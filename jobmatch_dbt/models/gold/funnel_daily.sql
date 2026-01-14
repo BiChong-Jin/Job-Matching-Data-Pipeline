@@ -24,5 +24,5 @@ SELECT
   ) AS apply_per_click_user_level
 FROM base
 GROUP BY 1
-ORDER BY 1 DESC;
+ORDER BY 1 DESC
 

@@ -88,7 +88,7 @@ T4 (morning)
 
 ## Challenges & Key Learnings
 
-1. BigQuery Streaming Insert Restriction (Free Tier)
+### 1. BigQuery Streaming Insert Restriction (Free Tier)
 
 Problem
 
@@ -105,7 +105,7 @@ Switched to a batch-oriented ingestion approach:
 Learning
 Batch load jobs are often preferable for reliability, cost control, and reprocessing, and are widely used in production systems.
 
-2. dbt Profile and Schema Configuration Pitfalls
+### 2. dbt Profile and Schema Configuration Pitfalls
 
 Problem
 
@@ -120,3 +120,33 @@ Solution
 Learning
 
 In dbt-bigquery, the profile dataset and model schema configuration interact closely; clear separation avoids naming ambiguity.
+
+### 3. SQL Compilation Errors in dbt Models
+
+Problem
+
+BigQuery threw syntax errors when running dbt models due to trailing semicolons in SQL files.
+
+Solution
+
+- Removed trailing semicolons from dbt model SQL
+- Relied on dbt’s internal query wrapping (CREATE TABLE AS SELECT)
+
+Learning
+
+dbt models must contain a single valid SELECT statement; minor SQL syntax differences matter in templated environments.
+
+### 4. Understanding dbt Build State and Cache
+
+Problem
+
+Changes to configuration were not reflected immediately in dbt runs.
+
+Solution
+
+- Used dbt clean to remove compiled artifacts and cached manifests
+- Re-ran dbt with a clean state
+
+Learning
+
+dbt caches compilation artifacts locally; cleaning is essential after configuration or environment changes.
